@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Trees } from './Trees';
 
 function Box(props) {
   const mesh = useRef();
@@ -12,12 +13,13 @@ function Box(props) {
       {...props}
       ref={mesh}
       scale={active ? 1.5 : 1}
+      castShadow
       onClick={(e) => setActive(!active)}
       onPointerOver={(e) => setHovered(true)}
       onPointerOut={(e) => setHovered(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'orange'} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'lime'} />
     </mesh>
   );
 }
@@ -25,10 +27,15 @@ function Box(props) {
 export const Scene = () => {
   return (
     <>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Box position={[-1.2, 0, 0]} />
-      <Box position={[1.2, 0, 0]} />
+      <ambientLight insentive={0.1} />
+      <directionalLight
+        color="white"
+        position={[15, 15, 15]}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+      />
+      <Trees />
     </>
   );
 };
