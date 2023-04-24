@@ -1,10 +1,11 @@
 import React, { NextPage } from 'next';
+import { FiberContainer } from '../components';
 
 const HomePage: NextPage = () => {
   return (
-    <>
-      <p>아직 서비스 준비 중이에요!</p>
-    </>
+    <div>
+      <FiberContainer />
+    </div>
   );
 };
 

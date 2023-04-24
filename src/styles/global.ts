@@ -29,6 +29,8 @@ export const globalStyle = css`
   * {
     box-sizing: border-box;
     font-family: 'Pretendard';
+    margin: 0 auto;
+    padding: 0;
   }
   html {
     font-size: 10px;
