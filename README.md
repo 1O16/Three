@@ -1,4 +1,4 @@
-Studying
-ThreeJS
-React Three Fiber
+Studying: 
+ThreeJS /
+React Three Fiber /
 WebGL
